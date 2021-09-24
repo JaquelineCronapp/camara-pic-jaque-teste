@@ -1,0 +1,12 @@
+{
+    "name": "validation-pic",
+    "text_pt_BR": "Formulário de validação",
+    "text_en_US": "Validation form",
+    "class": "adjust-icon mdi mdi-checkerboard",
+    "description": "Formulário com elementos de validação e comunicação de erros",
+    "description_en_US": "Form with validation elements and error reporting",
+    "category": [
+        "PIC"
+    ],
+    "templateURL": "src/main/java/META-INF/template/validation.template.html"
+}

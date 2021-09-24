@@ -1,0 +1,33 @@
+<form id="form1" data-pic-validation action="#" class="validatorFormGroup">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input data-pic-validation-config='{"validate": ["required", "email"]}' type="email" class="form-control" id="exampleInputEmail1" name="email">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleName1">Nome</label>
+        <!-- 'minhaRegra' é uma regra de exemplo, que vale exclusivamente para esse form. Veja o arquivo js utilizado para isso (procure pelo atributo data-pic-customscripts nessa página) -->
+        <input data-pic-validation-config='[{"validate" : "required", "msg" : "Mensagem customizada para obrigatório"}, {"validate" : "minhaRegra"}]' type="text" class="form-control" id="exampleName1" name="nome">
+    </div>
+    <div class="form-group">
+        <label for="ponto1">Ponto</label>
+        <input data-pic-validation-config='{"validate" : "ponto"}' type="text" class="form-control" id="ponto1" name="ponto">
+    </div>
+
+    <div class="form-group">
+        <label for="numero1">CPF ou CNPJ</label>
+        <!-- 'CPFouCNPJ' é uma regra criada pela equipe do PIC. Existem também as regras 'CPF' e 'CNPJ' -->
+        <input data-pic-validation-config='{"validate" : "CPFouCNPJ"}' type="text" class="form-control" id="numero1" name="numero">
+    </div>
+
+    <div class="form-group">
+        <label for="myFile">Arquivo para enviar</label>
+
+        <input data-pic-fileinput id="myFile" type="file" name="fichier" data-pic-validation-config='{"validate": "required"}' class="form-control">
+
+    </div>
+
+    <input type="submit" value="Confirmar">
+
+</form>

@@ -1,0 +1,72 @@
+{
+    "name": "alert-pic",
+    "text_pt_BR": "Alert",
+    "text_en_US": "Alert",
+    "class": "adjust-icon mdi mdi-checkerboard",
+    "description": "Campo de notificação estilo alerta",
+    "description_en_US": "Alert style notification field",
+    "category": [
+        "PIC"
+    ],
+    "wrapper": false,
+    "autoWrapper": true,
+    "forcedGroup": true,
+    "templateURL": "src/main/java/META-INF/template/alert-pic.template.html",
+    "properties": {
+        "id": {
+            "order": 1
+        },
+        "class": {
+            "order": 999
+        }
+    },
+    "attributesForPreview": [
+        {
+            "name": "pic-alert",
+            "type": "options",
+            "target": "class",
+            "values": [
+                {
+                    "key": "alert-danger",
+                    "value_pt_BR": "Erro",
+                    "value_en_US": "Error",
+                    "color": "#a94442"
+                },
+                {
+                    "key": "alert-success",
+                    "value_pt_BR": "Sucesso",
+                    "value_en_US": "Success",
+                    "color": "#3c763d"
+                },
+                {
+                    "key": "alert-warning",
+                    "value_pt_BR": "Alerta",
+                    "value_en_US": "Warning",
+                    "color": "#8a6d3b"
+                },
+                {
+                    "key": "alert-info",
+                    "value_pt_BR": "Informação",
+                    "value_en_US": "Info",
+                    "color": "#31708f"
+                }
+            ]
+        }
+    ],
+    "childrenProperties": [
+        {
+            "name": "pic-alert",
+            "selector": "div",
+            "displayName_pt_BR": "Tipo de alerta",
+            "displayName_en_US": "Alert type"
+        },
+        {
+            "name": "content",
+            "selector": "p",
+            "type": "text",
+            "displayName_pt_BR": "Título",
+            "displayName_en_US": "Title",
+            "order": 3
+        }
+    ]
+}

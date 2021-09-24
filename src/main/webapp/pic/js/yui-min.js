@@ -1,0 +1,1 @@
+console.warn('A partir da versão 1.7.1, o PIC não depende mais da biblioteca YUI. Remova de suas páginas a tag script que aponta para o arquivo pic/js/yui-min.js');
