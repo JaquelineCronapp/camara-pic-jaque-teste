@@ -3,7 +3,7 @@ app.controller('AfterLoginController', function ($scope) {
 });
 
 app.controller('AfterHomeController', function ($scope) {
-    //
+    $('body .fill').append(`<script src="../../pic/js/load-control.js" data-pic-showloading=""></script>`);
 });
 
 app.controller('AfterPageController', function ($scope) {
