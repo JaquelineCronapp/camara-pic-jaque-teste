@@ -1,0 +1,12 @@
+body{
+    display: block !important;
+}
+
+#cabecalho{
+    display:none;
+}
+
+.crn-alert-pic-designtime {
+    display: flex;
+    gap: 10px;
+}
