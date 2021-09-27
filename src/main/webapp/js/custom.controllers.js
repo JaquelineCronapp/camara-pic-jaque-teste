@@ -4,6 +4,13 @@ app.controller('AfterLoginController', function ($scope) {
 
 app.controller('AfterHomeController', function ($scope) {
     $('body .fill').append(`<script src="../../pic/js/load-control.js" data-pic-showloading=""></script>`);
+
+    app.config(
+        function ($locationProvider) {
+            $locationProvider.html5Mode(true);
+        }
+    );
+    
 });
 
 app.controller('AfterPageController', function ($scope) {
@@ -68,13 +75,7 @@ app.directive('alertPic', function ($compile) {
     }
 });
 
-app.config(
-    function ($locationProvider) {
-        $locationProvider.html5Mode(true);
-    }
-);
-
-app.directive('tabsPic', function ($compile) {
+app.directive('tabsPic', function ($compile) {   
     'use strict';
     return {
         restrict: 'C',
