@@ -8,7 +8,7 @@
     "category": [
         "PIC"
     ],
-    "templateURL": "src/main/java/META-INF/template/tabs.template.html",
+    "templateURL": "src/main/webapp/components/templates/tabs.template.html",
     "properties": {
         "class": {
             "order": 9999

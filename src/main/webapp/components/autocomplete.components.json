@@ -10,7 +10,7 @@
     ],
     "wrapper": false,
     "forcedGroup": true,
-    "templateURL": "src/main/java/META-INF/template/autocomplete.template.html",
+    "templateURL": "src/main/webapp/components/templates/autocomplete.template.html",
     "properties": {
       "name": {
         "displayName_pt_BR": "Nome do campo",

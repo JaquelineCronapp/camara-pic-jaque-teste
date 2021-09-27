@@ -11,7 +11,7 @@
     "wrapper": false,
     "autoWrapper": true,
     "forcedGroup": true,
-    "templateURL": "src/main/java/META-INF/template/alert-pic.template.html",
+    "templateURL": "src/main/webapp/components/templates/alert-pic.template.html",
     "properties": {
         "id": {
             "order": 1

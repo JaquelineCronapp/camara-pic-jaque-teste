@@ -8,5 +8,5 @@
     "category": [
         "PIC"
     ],
-    "templateURL": "src/main/java/META-INF/template/validation.template.html"
+    "templateURL": "src/main/webapp/components/templates/validation.template.html"
 }
