@@ -10,7 +10,7 @@ app.controller('AfterPageController', function ($scope) {
     //
 });
 
-app.directive('autocompletePic',  function ($compile) {
+app.directive('autocompletePic', function ($compile) {
     'use strict';
     return {
         restrict: 'C',
@@ -18,7 +18,7 @@ app.directive('autocompletePic',  function ($compile) {
             let list = attrs.picSource;
             let name = attrs.name;
             try {
-               list = await scope.$eval(attrs.picSource);
+                list = await scope.$eval(attrs.picSource);
             } catch (e) {
                 console.debug('Propriedade não é uma função de Bloco');
             }
@@ -100,73 +100,6 @@ app.directive('tabsPic', function ($compile) {
             }
 
             templateDyn = `<div data-pic-tabs><ul class="tab-list">${contentTabList}</ul><div class="tab-content">${contentTabPanel}</div></div>`
-            element.html(templateDyn);
-        }
-    }
-});
-
-// Falta pegar a informação da função
-app.directive('modalPic', function ($compile) {
-    'use strict';
-    return {
-        restrict: 'C',
-        replace: true,
-        link: function (scope, element, attrs) {
-            var templateDyn = '';
-
-            var picModalType = attrs.picModalType;
-            var title = attrs.title;
-            var idModal = attrs.modalId;
-            var type = attrs.statusType;
-            var typeConfirm = attrs.statusTypeConfirm;
-            var boxSize = attrs.boxSize;
-            var content = element[0].innerHTML;
-            var buttonClose = attrs.buttonClose;
-            var buttonConfirm = attrs.buttonConfirm;
-            var callback = attrs.callback;
-
-            // $evt('cronapi.callFunction(\'cronapi.screen.openUrl\').call(\'https://cronapp.io/\', true, null, null)')
-            // Precisa receber a função de cima da forma que está aqui embaixo
-
-            debugger
-            var callbackName = 'cronapi.callFunction("cronapi.screen.openUrl").call()';
-            var callbackParams = JSON.stringify(['https://cronapp.io/', true, null, null]);
-
-            let jsonPicModal = { title: title };
-
-            switch (picModalType) {
-                case "pic-modal-alert":
-                    jsonPicModal.dialog = "alert";
-                    jsonPicModal.type = type;
-                    break;
-
-                case "pic-modal-confirm":
-                    jsonPicModal.dialog = "confirm";
-                    jsonPicModal.labels = [buttonConfirm, buttonClose];
-                    jsonPicModal.size = boxSize;
-
-                    if (typeConfirm === "type-confirm-warning") {
-                        jsonPicModal.typeConfirm = "warning";
-                    }
-
-                    if (callback) {
-                        jsonPicModal.callback = `{"name": #callbackName#, "params": #callbackParams#} }`;
-                    }
-                    break;
-
-                case "pic-modal-form":
-                    jsonPicModal.dialog = "form";
-                    break;
-            }
-
-            templateDyn = `<div data-pic-modal='#jsonPicModal#' id="${idModal}">${content}</div>`;
-
-            jsonPicModal = JSON.stringify(jsonPicModal)
-            templateDyn = templateDyn
-                .split('#callbackName#').join(callbackName)
-                .split('#callbackParams#').join(callbackParams)
-                .split('#jsonPicModal#').join(jsonPicModal);
-
             element.html(templateDyn);
         }
     }
