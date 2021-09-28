@@ -28,13 +28,24 @@ app.directive('autocompletePic', function ($compile) {
                 list = await scope.$eval(attrs.picSource);
             } catch (e) {
                 console.debug('Propriedade não é uma função de Bloco');
+                list = attrs.picSource;
             }
-            let model = {
-                source: list,
-                type: 'selection'
-            };
-            let templateDyn = `<label for="${name}">Auto Complete</label>\
-                    <input id="lista${name}" data-pic-autocomplete='${JSON.stringify(model)}' type="text" class="form-control" name="${name}">`;
+            let model = {};
+            let templateDyn = '';
+            if (Array.isArray(list)) {
+                model.sourceType = 'hidden';
+                model.type = 'suggestion';
+                model.source = '#lista' + name;
+                templateDyn = `<div class="form-group">
+                            <label for="${name}">Auto Complete</label>
+                            <input id="${name}"" data-pic-autocomplete='${JSON.stringify(model)}' type="text" class="form-control" name="dep">
+                            <input id="lista${name}" type="hidden" value='${JSON.stringify(list)}'>
+                        </div>`
+            } else {
+                model.source = list;
+                model.type = 'selection';
+                templateDyn = `<label for="${name}">Auto Complete</label><input id="lista${name}" data-pic-autocomplete='${JSON.stringify(model)}' type="text" class="form-control" name="${name}">`;
+            }
             element.html(templateDyn);
         }
     }
