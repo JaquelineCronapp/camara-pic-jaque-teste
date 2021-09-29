@@ -21,7 +21,7 @@
         "displayName_pt_BR": "Fonte de dados Externa",
         "displayName_en_US": "External DataSource",
         "type": "text",
-        "onSave": "javascript:function() {​ var eventName = arguments[0]; if (eventName && eventName.substr(0,2) === '{​{​' && eventName.substr(eventName.length -2, 2) === '}​}​') {​ eventName = eventName.substr(2, eventName.length - 4); eventName = eventName.replace('.attr()', '');  }​  return eventName; }​",
+        "onSave": "javascript:function() { arguments = arguments || []; var eventName = arguments[0]; if (eventName && eventName.substr(0, 2) === '{{' && eventName.substr(eventName.length - 2, 2) === '}}') { eventName = eventName.substr(2, eventName.length - 4); eventName = eventName.replace('.attr()', ''); } return eventName; }",
         "onDisplay": "javascript:function() { return arguments[0]; }",
         "order": 2
       }
